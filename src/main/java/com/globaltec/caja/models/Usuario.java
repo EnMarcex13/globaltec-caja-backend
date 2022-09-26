@@ -1,5 +1,7 @@
 package com.globaltec.caja.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class Usuario {
     private String nombre;
     @Column(name = "login",nullable = false, unique = true)
     private String username;
+    @JsonIgnore
     @Column(name="clave",nullable = false)
     private String password;
     @Column(name = "condicion")
